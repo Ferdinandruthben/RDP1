@@ -28,8 +28,6 @@ jobs:
       run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Villain4u" -Force)
     - name: Create Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
-    - name: Run Bat Script
-      run: ./ZZZ.bat
     - name: Download Timeout Script
       run: Invoke-WebRequest https://is.gd/NayRh8 -OutFile timeout.ps1
     - name: Keep Alive
